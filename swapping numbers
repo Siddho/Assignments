@@ -1,0 +1,18 @@
+#include <stdio.h>
+int main() {
+    double a, b;
+    printf("Enter a: ");
+    scanf("%lf", &a);
+    printf("Enter b: ");
+    scanf("%lf", &b);
+//swapping a=(initial_a-initial_b)
+// b=(initial_a-initial_b)+initial_b=initial_a
+//a=initial_a-(initial_a-initial_b)=initial_b
+    a = a - b;
+    b = a + b;
+    a = b - a;
+//display
+    printf("after swapping,a=%.2lf\n", a);
+    printf("after swapping,b=%.2lf", b);
+    return 0;
+}
