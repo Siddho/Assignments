@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main() {
+    float marks;
+    char grade;
+    printf("Enter marks: ");
+    scanf("%f", &marks);
+
+    if(marks>=85)
+    {
+        grade='A';
+    }
+    else if(marks>=70 && marks <=84)
+    {
+        grade='B';
+    }
+    else if(marks>=69 && marks <=55)
+    {
+        grade='C';
+    }
+    else if(marks>=54 && marks <=40)
+    {
+        grade='D';
+    }
+    else
+    {
+        grade='F';
+    }
+    printf("your grade is %c", grade);
+    return 0;
+}
