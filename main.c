@@ -1,34 +1,28 @@
 #include <stdio.h>
-int primenum(int,int);
-
+int lcm(int a,int b);
 int main()
 {
-    int num1, check;
-    printf("Enter a number to find:");
-    scanf("%d", &num1);
-    check = primenum(num1, num1 / 2);
-    if (check == 1)
-    {
-        printf("%d is a prime number\n", num1);
-
-    } else
-    {
-        printf("%d is not a prime number\n", num1);
-
-    }
+    int num1, num2, LCM;
+    printf("Enter any two numbers to find LCM: ");
+    scanf("%d%D", &num1, &num2);
+    if (num1 > num2)
+        LCM = lcm(num2, num1);
+    else
+        LCM = lcm(num1, num2);
+    printf("LCM of %d and %d = %d", num1, num2, LCM);
     return 0;
 }
-int primenum(int num1,int i) {
-    if (i == 1) {
-        return 1;
+int lcm(int a ,int b)
+{
+    static int multiple =0;
+    if((multiple % a ==0) && (multiple % b ==0))
+    {
+        return multiple;
 
-    } else {
-        if (num1 % i == 0) {
-            return 0;
-        } else {
-            return primenum(num1, i - 1);
-        }
     }
+    else
+    {
+        return lcm(a,b);
+    }
+
 }
-
-
